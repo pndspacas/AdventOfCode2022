@@ -1,8 +1,10 @@
-const data = async () => {
-const response = await fetch ("https://adventofcode.com/2022/day/1/input")
-const text = await response.text();
+const puzzleInput = async () => {
+  const response = await fetch("https://adventofcode.com/2022/day/1/input");
+  const text = await response.text();
+  return text;
+};
 
-const puzzleDate = await data()
+const puzzleData = await puzzleInput();
 
 
 const getSumOfGroup = (group) =>
@@ -11,6 +13,6 @@ const getSumOfGroup = (group) =>
     .map(Number)
     .reduce((acc, c) => acc + c, 0);
 
-const numberGroups = sampleInput.split("\n\n");
+const numberGroups = puzzdleData.split("\n\n");
 
 const groupSums = numberGroups.map(getSumOfGroup);
